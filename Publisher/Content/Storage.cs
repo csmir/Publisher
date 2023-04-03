@@ -11,7 +11,12 @@ namespace Publisher
 
         static Storage()
         {
-            _path = Path.Combine("files", $"{typeof(T).Name.ToLowerInvariant()}s.json");
+            var innerPath = "files";
+
+            if (!Directory.Exists(innerPath))
+                Directory.CreateDirectory(innerPath);
+
+            _path = Path.Combine(innerPath, $"{typeof(T).Name.ToLowerInvariant()}s.json");
 
             if (!File.Exists(_path))
             {
