@@ -1,13 +1,11 @@
-﻿using Disqord.Bot.Commands.Text;
+﻿using Disqord;
+using Disqord.Bot.Commands;
+using Disqord.Bot.Commands.Text;
 using Qmmands.Text;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Publisher.Modules
 {
+    [RequireAuthorPermissions(Permissions.ManageChannels)]
     public class ManageModule : DiscordTextModuleBase
     {
         [TextCommand("enable")]

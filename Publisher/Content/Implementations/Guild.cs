@@ -1,5 +1,4 @@
 ﻿using Disqord;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Publisher
@@ -7,7 +6,7 @@ namespace Publisher
     public record Guild : IStored
     {
         [JsonPropertyName("guild")]
-        public ulong Id { get; }   
+        public ulong Id { get; }
 
         [JsonPropertyName("channels")]
         public List<ulong> PubChannels { get; set; }
